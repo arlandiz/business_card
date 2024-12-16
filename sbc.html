@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Gem Source - Digital Business Card</title>
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    text-align: left;
+    background-color: #000000; /* Black background as fallback */
+    background: #000000 url('https://www.dropbox.com/scl/fi/v1li9dyjcbrtq00urzu0c/diamond_logo.png?rlkey=cvq3c6gmnssmt8oiucwvfd2wg&st=ed8z10j6&raw=1') 
+                no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+        .card {
+            padding: 16px; /* Reduced by 20% */
+            border-radius: 10px;
+            max-width: 320px; /* Reduced by 20% */
+            margin: 20px;
+        }
+        .card h1 {
+            font-size: 1.6em; /* Reduced by 20% */
+            margin: 8px 0;
+            text-align: center;
+        }
+        .card p {
+            margin: 4px 0; /* Reduced by 20% */
+            font-size: 0.88em; /* Reduced by 20% */
+            text-align: center;
+        }
+        .card a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .card a:hover {
+            text-decoration: underline;
+        }
+        .tagline {
+            margin-top: 8px; /* Reduced by 20% */
+            font-size: 0.8em; /* Reduced by 20% */
+            font-style: italic;
+            color: #f0f0f0;
+        }
+        .qr-code {
+            margin-top: 12px; /* Reduced by 20% */
+            text-align: center;
+        }
+        .profile-photo {
+            width: 120px; /* Reduced by 20% */
+            height: 120px; /* Reduced by 20% */
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+            margin: 8px auto; /* Reduced by 20% */
+        }
+        .italic-name {
+            font-style: italic;
+            text-align: center;
+            font-size: 0.88em; /* Reduced by 20% */
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>My Gem Source</h1>
+<p class="tagline">Best source for Lab Diamonds</p>
+
+        <img src="https://www.dropbox.com/scl/fi/o71kzev4gml28hd1axirb/sergiopic.jpg?rlkey=d85mmvnosxq67hykb9q2dpk8h&st=lgpbf4ml&raw=1" alt="Profile Photo" class="profile-photo">
+        <p class="italic-name">Sergio Arlandiz</p>
+        <p><strong>Managing Member</strong></p>
+        <p>(312)-907-8224</p>
+        <p><a href="mailto:contact@mygemsource.com">contact@mygemsource.com</a></p>
+        <p><a href="https://mygemsource.com" target="_blank">mygemsource.com</a></p>
+        <p class="tagline">Best source for Lab Diamonds</p>
+        <div class="qr-code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://mygemsource.com" alt="QR Code">
+        </div>
+    </div>
+</body>
+</html>
