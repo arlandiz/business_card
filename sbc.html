@@ -16,6 +16,7 @@
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
+            position: relative;
         }
         .card {
             margin: 4vw;
@@ -25,9 +26,9 @@
             box-sizing: border-box;
         }
         .card h1 a {
-            color: #ffffff; /* Changed to white */
+            color: #ffffff;
             text-decoration: none;
-            font-size: 1.2em;
+            font-size: 1.8em;
             margin-bottom: 4px;
             display: block;
         }
@@ -44,7 +45,7 @@
             font-size: 0.9em;
         }
         .card a {
-            color: #ffffff; /* Changed to white for all links */
+            color: #ffffff;
             text-decoration: none;
             font-weight: bold;
         }
@@ -60,9 +61,27 @@
             margin: 20px 0 10px;
             border: 2px solid #ffffff;
         }
+        .qr-code {
+            margin-top: 20px;
+        }
         .qr-code img {
             width: 120px;
             height: 120px;
+        }
+        .email-link {
+            position: absolute;
+            bottom: 20%; /* Always 20% off the bottom */
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+        .email-link a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        .email-link a:hover {
+            text-decoration: underline;
         }
         .italic-name {
             font-style: italic;
@@ -86,12 +105,14 @@
             <p><strong>Managing Member</strong></p>
         </div>
         <p>(312)-907-8224</p>
-        <p><a href="mailto:contact@mygemsource.com">contact@mygemsource.com</a></p>
         <div class="qr-code">
             <a href="https://mygemsource.com" target="_blank">
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://mygemsource.com" alt="QR Code">
             </a>
         </div>
+    </div>
+    <div class="email-link">
+        <a href="mailto:contact@mygemsource.com">contact@mygemsource.com</a>
     </div>
 </body>
 </html>
