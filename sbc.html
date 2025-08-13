@@ -1,118 +1,160 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Gem Source - Digital Business Card</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #ffffff;
-            background: #000000 url('https://www.dropbox.com/scl/fi/v1li9dyjcbrtq00urzu0c/diamond_logo.png?rlkey=cvq3c6gmnssmt8oiucwvfd2wg&st=ed8z10j6&raw=1') 
-                        no-repeat center center/cover;
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            position: relative;
-        }
-        .card {
-            margin: 4vw;
-            text-align: left;
-            width: 90%;
-            max-width: 400px;
-            box-sizing: border-box;
-        }
-        .card h1 a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1.1em;
-            margin-bottom: 4px;
-            display: block;
-        }
-        .card h1 a:hover {
-            text-decoration: underline;
-        }
-        .tagline {
-            margin-top: -10px;
-            font-size: 0.9em;
-            color: #f0f0f0;
-        }
-        .card p {
-            margin: 6px 0;
-            font-size: 0.9em;
-        }
-        .card a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .card a:hover {
-            text-decoration: underline;
-        }
-        .profile-photo {
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 10px;
-            display: block;
-            margin: 20px 0 10px;
-            border: 2px solid #ffffff;
-        }
-        .qr-code {
-            margin-top: 20px;
-        }
-        .qr-code img {
-            width: 120px;
-            height: 120px;
-        }
-        .email-link {
-            position: absolute;
-            bottom: 20%; /* Always 20% off the bottom */
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-        }
-        .email-link a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1em;
-        }
-        .email-link a:hover {
-            text-decoration: underline;
-        }
-        .italic-name {
-            font-style: italic;
-            font-size: 0.9em;
-            margin-bottom: 4px;
-        }
-        .name-section {
-            margin-bottom: 12px;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sergio Arlandiz — Digital Card</title>
+  <meta name="description" content="Digital business card for Sergio Arlandiz — Managing Member at MyGemSource." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0e1116; --panel:#111827; --panel-2:#0b1220; --text:#e5e7eb; --muted:#9ca3af;
+      --brand:#22d3ee; --brand-2:#60a5fa; --border:#1f2937;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+      background:
+        radial-gradient(1200px 800px at 80% -10%, #1b2658 0%, transparent 60%),
+        radial-gradient(900px 600px at -10% 120%, #0a3b4a 0%, transparent 60%),
+        var(--bg);
+      color:var(--text); display:grid; place-items:center; padding:24px;
+    }
+    .card{
+      width:min(820px, 100%);
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border:1px solid var(--border);
+      border-radius:18px; padding:28px; position:relative;
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
+      backdrop-filter: blur(6px);
+    }
+    .top{display:flex; gap:24px; align-items:center; flex-wrap:wrap}
+    .avatar{
+      width:108px; height:108px; border-radius:14px; overflow:hidden; border:1px solid var(--border);
+      background:#0b0f16; flex:0 0 auto;
+    }
+    .avatar img{width:100%; height:100%; object-fit:cover}
+    h1{margin:0; font-size:28px; line-height:1.25}
+    .title{color:var(--muted); margin-top:2px}
+    .brand-link{
+      display:inline-flex; align-items:center; gap:8px; margin-top:10px; text-decoration:none;
+      color:var(--brand); font-weight:600;
+    }
+    .grid{
+      display:grid; grid-template-columns:1.4fr 1fr; gap:24px; margin-top:22px;
+    }
+    @media (max-width: 760px){ .grid{grid-template-columns:1fr} }
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid var(--border); border-radius:14px; padding:16px;
+    }
+    .row{display:flex; align-items:center; gap:10px; padding:10px 0; border-bottom:1px dashed #202a3a}
+    .row:last-child{border-bottom:0}
+    .row a{color:var(--text); text-decoration:none}
+    .row a:hover{color:var(--brand-2)}
+    .btns{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .btn{
+      display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:10px;
+      border:1px solid var(--border); background:var(--panel); color:var(--text); text-decoration:none; font-weight:600;
+    }
+    .btn:hover{border-color:#2b3b54; transform:translateY(-1px)}
+    .muted{color:var(--muted)}
+    .qr{display:flex; align-items:center; gap:14px}
+    .qr img{width:112px; height:112px; border-radius:10px; border:1px solid var(--border); background:#0b0f16}
+    footer{margin-top:18px; text-align:center; color:var(--muted); font-size:12px}
+    /* tiny icon style */
+    svg{width:18px; height:18px; opacity:.9}
+  </style>
 </head>
 <body>
-    <div class="card">
-        <h1>
-            <a href="https://mygemsource.com" target="_blank">MyGemSource.Com</a>
-        </h1>
-        <p class="tagline">Best source for Lab Diamonds</p>
-        <img src="https://www.dropbox.com/scl/fi/o71kzev4gml28hd1axirb/sergiopic.jpg?rlkey=d85mmvnosxq67hykb9q2dpk8h&st=lgpbf4ml&raw=1" alt="Profile Photo" class="profile-photo">
-        <div class="name-section">
-            <p class="italic-name">Sergio Arlandiz</p>
-            <p><strong>Managing Member</strong></p>
+  <main class="card" role="main">
+    <section class="top">
+      <div class="avatar" aria-hidden="true">
+        <img src="https://www.dropbox.com/scl/fi/o71kzev4gml28hd1axirb/sergiopic.jpg?rlkey=d85mmvnosxq67hykb9q2dpk8h&st=lgpbf4ml&raw=1"
+             alt="Photo of Sergio Arlandiz"
+             onerror="this.style.display='none'">
+      </div>
+      <div>
+        <h1>Sergio Arlandiz</h1>
+        <div class="title">Managing Member</div>
+        <a class="brand-link" href="https://mygemsource.com" target="_blank" rel="noopener">
+          <!-- link icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.71"/></svg>
+          mygemsource.com
+        </a>
+        <div class="btns">
+          <a class="btn" href="mailto:contact@mygemsource.com">
+            <!-- mail -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+            contact@mygemsource.com
+          </a>
+          <a class="btn" href="tel:+13129078224">
+            <!-- phone -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.62a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.46-1.16a2 2 0 0 1 2.11-.45 12 12 0 0 0 2.62.66A2 2 0 0 1 22 16.92z"/></svg>
+            (312) 907‑8224
+          </a>
         </div>
-        <p>(312)-907-8224</p>
-        <div class="qr-code">
-            <a href="https://mygemsource.com" target="_blank">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://mygemsource.com" alt="QR Code">
-            </a>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Contact & QR">
+      <div class="panel">
+        <h3 style="margin:0 0 8px 0">Contact</h3>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+          <a href="mailto:contact@mygemsource.com">contact@mygemsource.com</a>
         </div>
-    </div>
-    <div class="email-link">
-        <a href="mailto:contact@mygemsource.com">contact@mygemsource.com</a>
-    </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.62a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.46-1.16a2 2 0 0 1 2.11-.45 12 12 0 0 0 2.62.66A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+13129078224">+1 312‑907‑8224</a>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <a href="https://mygemsource.com" target="_blank" rel="noopener">https://mygemsource.com</a>
+        </div>
+        <div class="btns">
+          <a class="btn" download="sergio-arlandiz.vcf" href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3AArlandiz%3BSergo%3B%3B%3B%0AFN%3ASergio%20Arlandiz%0AORG%3AMyGemSource%0ATITLE%3AManaging%20Member%0ATEL%3BTYPE%3DWORK%2CVOICE%3A%2B13129078224%0AEMAIL%3BTYPE%3DINTERNET%3Acontact%40mygemsource.com%0AURL%3Ahttps%3A%2F%2Fmygemsource.com%0AEND%3AVCARD">
+            <!-- contact card -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="10" r="2"/><path d="M14 8h5M14 12h5M7 14h10"/></svg>
+            Download vCard
+          </a>
+          <a class="btn" href="https://github.com/arlandiz" target="_blank" rel="noopener">
+            <!-- github -->
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.79 23.38c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.35-1.76-1.35-1.76-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.26 1.86 1.26 1.08 1.85 2.83 1.31 3.52 1 .11-.8.42-1.31.77-1.61-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.16 0 0 1.01-.32 3.31 1.23a11.5 11.5 0 0 1 6.02 0c2.3-1.55 3.31-1.23 3.31-1.23.66 1.64.24 2.86.12 3.16.77.84 1.24 1.91 1.24 3.22 0 4.62-2.81 5.65-5.49 5.95.43.37.82 1.09.82 2.2v3.26c0 .32.21.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="panel qr">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://mygemsource.com" alt="QR to mygemsource.com" />
+        <div>
+          <div class="muted" style="margin-bottom:8px">Scan for site</div>
+          <a class="btn" href="https://mygemsource.com" target="_blank" rel="noopener">
+            Visit MyGemSource
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>© <span id="y"></span> Sergio Arlandiz · All rights reserved</footer>
+  </main>
+
+  <!-- JSON-LD for richer profile cards -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sergio Arlandiz",
+    "jobTitle": "Managing Member",
+    "email": "mailto:contact@mygemsource.com",
+    "telephone": "+1-312-907-8224",
+    "url": "https://mygemsource.com",
+    "sameAs": ["https://github.com/arlandiz"]
+  }
+  </script>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
